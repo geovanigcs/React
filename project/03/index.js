@@ -94,3 +94,37 @@ const frutas = ['maçã', 'banana', 'maçã', 'laranja', 'banana', 'maçã']
 const quantidade = frutas.reduce((acumulador, valor) => ({...acumulador,[valor] : (acumulador[valor] || 0) + 1}),{})
 console.log(quantidade)
 
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const quadrado = numeros.filter(valor => valor % 2 !== 0).map(valor => valor *  valor)
+console.log(quadrado)
+
+const palavras = ['carro', 'bicicleta', 'avião', 'moto', 'helicóptero']
+const cop = palavras.reduce((acumulador, valor) => (valor.length > acumulador.length ? valor : acumulador), palavras[0])
+console.log(cop)
+
+const pessoas = [
+    { nome: 'João', idade: 25 },
+    { nome: 'Maria', idade: 30 },
+    { nome: 'José', idade: 45 },
+    { nome: 'Ana', idade: 20 }
+  ]
+
+const somaI = pessoas.reduce((acumulador, valor) => acumulador + valor.idade, 0)
+console.log(somaI)
+
+const frase = 'Hello World'
+const cadencia = frase.split('').reduce((acumulador, valor) => {
+  acumulador[valor] = ( acumulador[valor] || 0) + 1
+  return acumulador
+}, {})
+console.log(cadencia)
+
+const produtos = [
+  { nome: 'Celular', preco: 299 },
+  { nome: 'Livro', preco: 29 },
+  { nome: 'Televisão', preco: 499 },
+  { nome: 'Caneta', preco: 2 }
+]
+
+const caros = produtos.filter(produto => produto.preco > 100).map(produto => produto.nome)
+console.log(caros)
